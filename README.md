@@ -1,13 +1,9 @@
-# README
+# RESER4YOU2(WEB VERSION 0.0.0)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* Ruby version ~> 2.6.1
 
-* Ruby version
-
-* System dependencies
+* System dependencies 
 
 * Configuration
 
