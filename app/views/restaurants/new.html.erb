@@ -1,0 +1,17 @@
+<h2>Welcome New Restaurant!</h2>
+
+<% if @restaurant.errors.any? %>
+<h2 style="color:red;"> <%= @restaurant.errors.full_messages[0] %> </h2>
+<% end %>
+
+<%= form_for @restaurant do |f| %>
+<h3> <%= f.label :name %> </h3>
+<h3> <%= f.text_field :name %> </h3>
+<h3> <%= f.label :username %> </h3>
+<h3> <%= f.text_field :username %> </h3>
+<h3> <%= f.label :email %> </h3>
+<h3> <%= f.email_field :email %> </h3>
+<h3> <%= f.label :password %> </h3>
+<h3> <%= f.password_field :password %> </h3>
+<%= f.submit %>
+<% end %>

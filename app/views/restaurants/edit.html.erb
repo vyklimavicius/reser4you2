@@ -1,0 +1,13 @@
+<h2>Let's edit a Restaurant!</h2>
+
+
+
+<%= form_for @restaurant do |f| %>
+<h3> <%= f.label :name %> </h3>
+<h3> <%= f.text_field :name %> </h3>
+<%= f.submit value:'Update' %>
+<% end %>
+
+<%= form_for @restaurant, method: :delete do |u| %>
+<%= u.submit value: "Delete" %>
+<% end %>

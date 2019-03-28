@@ -1,0 +1,19 @@
+
+
+<div class="show_background">
+<h3 style="color: white;"> <%= @restaurant.name %> </h3>
+<br>
+<h4 style="color: white;"> <%= @restaurant.description %> </h4>
+<br>
+<h5 style="color: white;">Reviews</h5>
+<br>
+<% if @restaurant.reviews.any? %>
+<% @restaurant.reviews.each do |r| %>
+<h4 style="color: white;"> @ <%= r.review %> - </h4>
+<br>
+<% end %>
+<% end %>
+<br>
+<h4 style="color: white;"> <%= link_to "Post a review!", new_review_path %></h4>
+<h6 style="color: white;"> <%= link_to "Back", request.referer.present? ? request.referer : default_path %> </h6>
+</div>

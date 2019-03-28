@@ -1,0 +1,14 @@
+
+<!-- Form for a new review -->
+
+<div class="floating_img"></div>
+<div class="block_user_new">
+<h1 style="color:white;">Post a review!!</h1>
+<%= form_for @review do |f| %>
+<h2 style="color: white;">Which restaurant?</h2>
+<h5>  <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %> </h5>
+<br>
+<h3> <%= f.text_area :review %> </h3>
+<br>
+<%= f.submit value: "Post!"%>
+<% end %>

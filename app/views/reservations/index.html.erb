@@ -1,0 +1,6 @@
+<h2>This are all of the Reservations </h2>
+
+
+  <% @reservations.each do |r| %>
+  <h3 style="color: white;"> <%= r.restaurant.name %> </h3>
+  <% end %>
