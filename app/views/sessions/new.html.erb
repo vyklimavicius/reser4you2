@@ -1,0 +1,17 @@
+
+<% if flash[:errors] %>
+<h2 style="color: red;"> <%= flash[:errors] %> </h2>
+<% end %>
+
+<div class="floating_img"></div>
+<div class="block_user_new">
+<%= form_for :session, url:login_path do |f| %>
+<h3> <%= f.label :username %> </h3>
+<h3> <%= f.text_field :username %> </h3>
+<h3> <%= f.label :password %> </h3>
+<h3> <%= f.password_field :password %> </h3>
+<%= f.submit value: "Login"%>
+<% end %>
+<br>
+<p>New user? <%= link_to "Sign up now!", new_user_path %> </p>
+</div>

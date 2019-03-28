@@ -1,0 +1,6 @@
+<h2>This are all of our Users!</h2>
+
+
+  <% @users.each do |u| %>
+  <h3> <%= link_to u.name, user_path(u.id) %> </h3>
+  <% end %>

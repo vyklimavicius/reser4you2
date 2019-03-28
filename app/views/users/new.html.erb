@@ -1,0 +1,30 @@
+
+
+<% if @user.errors.any? %>
+<h2 style="color:red;"> <%= @user.errors.full_messages[0] %> </h2>
+<% end %>
+
+<!-- <div class="left_navbar">
+  <h3>Test</h3>
+</div> -->
+
+<div class="floating_img"></div>
+<div class="block_user_new">
+<%= form_for @user do |f| %>
+<h3> <%= f.label :name %> </h3>
+<h3> <%= f.text_field :name %> </h3>
+<h3> <%= f.label :username %> </h3>
+<h3> <%= f.text_field :username %> </h3>
+<h3> <%= f.label :email %> </h3>
+<h3> <%= f.email_field :email %> </h3>
+<h3> <%= f.label :password %> </h3>
+<h3> <%= f.password_field :password %> </h3>
+<br>
+<%= f.submit value:'Sign Up!' %>
+<% end %>
+</div>
+
+
+<!-- <div class="footer">
+  <h3>Footer</h3>
+</div> -->

@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Reser4you2</title>
+
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +11,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar_top">
+      <h1>Welcome to Reser4you2</h1>
+      </div>
+      <div class="footer"> ©Copyright Vytautas Klimavicius 2019</div>
+      <%= yield %>
   </body>
 </html>

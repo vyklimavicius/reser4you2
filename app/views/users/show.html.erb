@@ -1,0 +1,70 @@
+
+<!-- Show html -->
+<div class="show_background">
+  <h2 style="text-align: left"> <%= link_to "Profile", edit_user_path %> </h2>
+  <br>
+  <h1 style="text-align: center; color: white;">Dashboard</h1>
+  <h2 style="color: white;">Welcome <%= @user.username %>!</h2>
+  <br>
+  <h2>Restaurants available:</h2>
+  <br>
+  <div class="sardis"></div>
+  <div class="peter"></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <ul class="nav">
+    <% @restaurants.each do |r| %>
+    <li> <%= link_to r.name, restaurant_path(r.id) %> </li>
+    <% end %>
+  </ul>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2>Where do you want to make a reservation?</h2>
+  <br>
+    <!-- Form for a new reservation -->
+    <%= form_for Reservation.new do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <h3 style="color: white;"> <%= f.label :Choices %>:  </h3>
+   <h5>  <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %> </h5>
+   <br>
+   <h3 style="color: white;"> Date:(mm/dd/yy - time) <%= f.text_field :date %> </h3>
+   <br>
+   <%= f.submit value: "Reserve now!" %>
+  <% end %>
+  <br>
+  <!-- Shows any User reservation -->
+  <% if @user.reservations.any? %>
+  <h3 style="color: white;">Reservations at:</h3>
+  <% @user.reservations.each do |r| %>
+  <h2> <%= r.restaurant.name %> </h2>
+  <h2> <%= r.date %> </h2>
+  <% end %>
+  <% end %>
+  <!-- Form for a new review -->
+  <br>
+  <br>
+  <br>
+  <!-- Logout path -->
+  <%= link_to "Log out", logout_path, method: :delete %>
+</div>
